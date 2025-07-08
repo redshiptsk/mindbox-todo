@@ -1,7 +1,7 @@
 'use client'
-import Stats from '@/components/Stats';
-import TodoList from '@/components/TodoList';
-import { useTodos } from '@/hooks/useTodos';
+import Stats from '../components/Stats';
+import TodoList from '../components/TodoList';
+import { useTodos } from '../hooks/useTodos';
 import React, { useState } from 'react';
 
 
