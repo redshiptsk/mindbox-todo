@@ -9,7 +9,8 @@ export interface Todo {
 }
 
 export const useTodos = () => {
-    const storagedTodos = JSON.parse(localStorage.getItem('toDos')) || []
+    
+    const storagedTodos = JSON.parse(localStorage.getItem('toDos')?.toString() || '[]')
     const [todos, setTodos] = useState<Todo[]>(storagedTodos);
     const [input, setInput] = useState('');
 
