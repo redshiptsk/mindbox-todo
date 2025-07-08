@@ -9,9 +9,7 @@ export interface Todo {
 }
 
 export const useTodos = () => {
-    
-    const storagedTodos = JSON.parse(localStorage.getItem('toDos')?.toString() || '[]')
-    const [todos, setTodos] = useState<Todo[]>(storagedTodos);
+    const [todos, setTodos] = useState<Todo[]>([]);
     const [input, setInput] = useState('');
 
     const addTodo = () => {
@@ -32,10 +30,6 @@ export const useTodos = () => {
     const clearCompleted = () => {
         setTodos(todos.filter(todo => !todo.completed));
     };
-
-    useEffect(() => {
-        localStorage.setItem('toDos', JSON.stringify(todos))
-    }, [todos])
 
     return {
     todos,
